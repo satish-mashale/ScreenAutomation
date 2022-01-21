@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20220120 12:37:04.067" rpa="false">
+<suite id="s1" name="Login wih images elements" source="C:\Users\Satish\Desktop\screencoach\TestSuite\Login_wih_images_elements.robot">
+<kw name="Suite Setup" type="setup">
+<kw name="Open Browser With Download Capabilities" library="SW">
+<doc>:param url:
+:param browser:
+:param remote_url:
+:return:</doc>
+<arguments>
+<arg>https://manage-dev.myscreencoach.com/#/login</arg>
+<arg>gc</arg>
+<arg>remote_url=${remote_url}</arg>
+</arguments>
+<status status="PASS" starttime="20220120 12:37:05.245" endtime="20220120 12:37:17.840"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220120 12:37:17.840" endtime="20220120 12:37:19.974"></status>
+</kw>
+<kw name="Screen Wait" library="SH">
+<status status="PASS" starttime="20220120 12:37:19.974" endtime="20220120 12:37:31.974"></status>
+</kw>
+<status status="PASS" starttime="20220120 12:37:05.245" endtime="20220120 12:37:31.974"></status>
+</kw>
+<test id="s1-t1" name="User_login">
+<kw name="Screen Wait" library="SH">
+<status status="PASS" starttime="20220120 12:37:31.975" endtime="20220120 12:37:43.976"></status>
+</kw>
+<kw name="Select Element From Image" library="SH">
+<arguments>
+<arg>email_box.png</arg>
+</arguments>
+<msg timestamp="20220120 12:37:55.462" level="INFO">Point(x=561, y=459)
+clicking email_box.png</msg>
+<status status="PASS" starttime="20220120 12:37:43.977" endtime="20220120 12:37:55.462"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.querySelector("#app-container &gt; flt-glass-pane").shadowRoot.querySelector("input").value=${user_name}</arg>
+</arguments>
+<msg timestamp="20220120 12:37:55.463" level="INFO">Executing JavaScript:
+document.querySelector("#app-container &gt; flt-glass-pane").shadowRoot.querySelector("input").value="sneh@myscreencoach.com"
+Without any arguments.</msg>
+<status status="PASS" starttime="20220120 12:37:55.462" endtime="20220120 12:37:55.478"></status>
+</kw>
+<kw name="Select Element From Image" library="SH">
+<arguments>
+<arg>password_box.png</arg>
+</arguments>
+<msg timestamp="20220120 12:38:06.510" level="INFO">Point(x=614, y=514)
+clicking password_box.png</msg>
+<status status="PASS" starttime="20220120 12:37:55.479" endtime="20220120 12:38:06.510"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.querySelector("#app-container &gt; flt-glass-pane").shadowRoot.querySelector("input").value=${user_password}</arg>
+</arguments>
+<msg timestamp="20220120 12:38:06.511" level="INFO">Executing JavaScript:
+document.querySelector("#app-container &gt; flt-glass-pane").shadowRoot.querySelector("input").value="Jaipur123*"
+Without any arguments.</msg>
+<status status="PASS" starttime="20220120 12:38:06.511" endtime="20220120 12:38:06.517"></status>
+</kw>
+<kw name="Select Element From Image" library="SH">
+<arguments>
+<arg>login_box.png</arg>
+</arguments>
+<msg timestamp="20220120 12:38:14.360" level="INFO">Point(x=683, y=585)
+clicking login_box.png</msg>
+<status status="PASS" starttime="20220120 12:38:06.518" endtime="20220120 12:38:14.360"></status>
+</kw>
+<kw name="Screen Wait" library="SH">
+<status status="PASS" starttime="20220120 12:38:14.361" endtime="20220120 12:38:26.361"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.body.style.zoom="120%"</arg>
+</arguments>
+<msg timestamp="20220120 12:38:26.362" level="INFO">Executing JavaScript:
+document.body.style.zoom="120%"
+Without any arguments.</msg>
+<status status="PASS" starttime="20220120 12:38:26.361" endtime="20220120 12:38:26.370"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>message.png</arg>
+</arguments>
+<msg timestamp="20220120 12:38:26.493" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="message.png"&gt;&lt;img src="message.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220120 12:38:26.370" endtime="20220120 12:38:26.493"></status>
+</kw>
+<kw name="Get Image Text" library="OH">
+<arguments>
+<arg>message.png</arg>
+</arguments>
+<assign>
+<var>${image_text}</var>
+</assign>
+<msg timestamp="20220120 12:38:27.010" level="INFO">Family List
+Family name Enter tag
+Abasolo family Christos Family Dev family Developer family
+#developer
+los Dev family Jerome family Julian White Koushik Nallaparaju
+family
+#1234, #abed Habe</msg>
+<msg timestamp="20220120 12:38:27.010" level="INFO">${image_text} =  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Family List
+Family name Enter tag
+Abasolo family Christos Family Dev family Developer family
+#developer
+los Dev family Jerome family Julian White Koushik Nallaparaju
+f...</msg>
+<status status="PASS" starttime="20220120 12:38:26.494" endtime="20220120 12:38:27.010"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${image_text}</arg>
+</arguments>
+<msg timestamp="20220120 12:38:27.011" level="INFO"> 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Family List
+Family name Enter tag
+Abasolo family Christos Family Dev family Developer family
+#developer
+los Dev family Jerome family Julian White Koushik Nallaparaju
+family
+#1234, #abed Habe
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+</msg>
+<status status="PASS" starttime="20220120 12:38:27.011" endtime="20220120 12:38:27.012"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Family List</arg>
+</arguments>
+<assign>
+<var>${validation_message}</var>
+</assign>
+<msg timestamp="20220120 12:38:27.012" level="INFO">${validation_message} = Family List</msg>
+<status status="PASS" starttime="20220120 12:38:27.012" endtime="20220120 12:38:27.012"></status>
+</kw>
+<kw name="Validate Message" library="SH">
+<arguments>
+<arg>${image_text}</arg>
+<arg>${validation_message}</arg>
+</arguments>
+<msg timestamp="20220120 12:38:27.013" level="INFO">Chcking message Family List
+validated message Family List</msg>
+<status status="PASS" starttime="20220120 12:38:27.013" endtime="20220120 12:38:27.013"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220120 12:38:27.117" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220120 12:38:27.014" endtime="20220120 12:38:27.117"></status>
+</kw>
+<status status="PASS" starttime="20220120 12:37:31.974" endtime="20220120 12:38:27.118" critical="yes"></status>
+</test>
+<kw name="Suite Teardown" type="teardown">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220120 12:38:27.120" endtime="20220120 12:38:31.384"></status>
+</kw>
+<status status="PASS" starttime="20220120 12:38:27.120" endtime="20220120 12:38:31.384"></status>
+</kw>
+<status status="PASS" starttime="20220120 12:37:04.070" endtime="20220120 12:38:31.384"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Login wih images elements">Login wih images elements</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220120 12:37:05.243" level="ERROR">Error in file 'C:\Users\Satish\Desktop\screencoach\TestSuite\Login_wih_images_elements.robot': Replacing variables from setting 'Resource' failed: Variable '${Resources}' not found.</msg>
+</errors>
+</robot>

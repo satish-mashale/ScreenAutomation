@@ -18,27 +18,21 @@ ${family}	"developer family"
 ${images_path}	${CURDIR}/../
 *** Test Cases ***
 User_login
-	SH.screen_wait
-	SH.select_element_from_image	email_box.png	
+	SH.select_element_from_image_opencv	email_box.png	
 	Execute Javascript    document.querySelector("#app-container > flt-glass-pane").shadowRoot.querySelector("input").value=${user_name}
-	SH.select_element_from_image	password_box.png	
+	SH.select_element_from_image_opencv	password_box.png	
 	Execute Javascript    document.querySelector("#app-container > flt-glass-pane").shadowRoot.querySelector("input").value=${user_password}
-	SH.select_element_from_image	login_box.png	
-	SH.screen_wait
-	Execute javascript	document.body.style.zoom="120%"
+	SH.select_element_from_image_opencv	loginbtn.png
+	SH.select_element_from_image_opencv	add_family.png
 	Capture Page Screenshot	message.png
-	${image_text}=	OH.get_image_text	message.png
-	Log	${image_text}
-	${validation_message}	Set Variable 	Family List
-	SH.validate_message	${image_text}	${validation_message}	
-	Capture Page Screenshot	
+
 	
 
 *** Keywords ***
 Suite Setup
     SW.Open Browser With Download Capabilities    https://manage-dev.myscreencoach.com/#/login  gc    remote_url=${remote_url}
     Maximize Browser Window
-    SH.screen_wait
+	SH.select_element_from_image_opencv	welcome.png
 
 
 
